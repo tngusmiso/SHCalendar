@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateCell: UICollectionViewCell {
+class MonthlyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
 }

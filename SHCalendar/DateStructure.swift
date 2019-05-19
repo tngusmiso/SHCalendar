@@ -47,7 +47,7 @@ struct DateInfo {
 
 enum Days: Int {
     case SUN = 0
-    case MON
+    case MON = 1
     case TUE
     case WED
     case THU
@@ -81,5 +81,6 @@ func getMonthInfo (year: Int, month: Int) -> MonthInfo {
 
 func getDay (year: Int, month: Int, date: Int) -> Days{
     let startDay = getMonthInfo(year: year ,month: month).startDay
-    return Days(rawValue: date%7 + startDay.rawValue - 1) ?? .SUN
+    let value = (date % 7 + startDay.rawValue - 1) % 7
+    return Days(rawValue: value)!
 }

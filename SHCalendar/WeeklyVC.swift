@@ -11,7 +11,6 @@ import UIKit
 class WeeklyVC: UIViewController {
     let cellidentifier = "weaklyCell"
     var weekInfo: WeekInfo?
-    
 
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var weekLabel: UILabel!

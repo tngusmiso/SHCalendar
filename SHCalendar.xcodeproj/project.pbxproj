@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929B228BE04700EE0110 /* AppDelegate.swift */; };
-		3AFF929E228BE04700EE0110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929D228BE04700EE0110 /* ViewController.swift */; };
+		3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929D228BE04700EE0110 /* MonthlyVC.swift */; };
 		3AFF92A1228BE04700EE0110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF929F228BE04700EE0110 /* Main.storyboard */; };
 		3AFF92A3228BE04700EE0110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF92A2228BE04700EE0110 /* Assets.xcassets */; };
 		3AFF92A6228BE04700EE0110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF92A4228BE04700EE0110 /* LaunchScreen.storyboard */; };
 		3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF933B229057B000EE0110 /* DateStructure.swift */; };
-		3AFF933E22905AEF00EE0110 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF933D22905AEF00EE0110 /* DateCell.swift */; };
+		3AFF933E22905AEF00EE0110 /* MonthlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF933D22905AEF00EE0110 /* MonthlyCollectionViewCell.swift */; };
 		3AFF934522914A5300EE0110 /* WeeklyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934322914A5300EE0110 /* WeeklyTableViewCell.swift */; };
 		3AFF934622914A5300EE0110 /* WeeklyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */; };
 		3AFF934822914BF900EE0110 /* WeeklyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934722914BF900EE0110 /* WeeklyVC.swift */; };
+		3AFF934A22917E1300EE0110 /* DailyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934922917E1300EE0110 /* DailyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3AFF9298228BE04700EE0110 /* SHCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFF929B228BE04700EE0110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3AFF929D228BE04700EE0110 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AFF929D228BE04700EE0110 /* MonthlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyVC.swift; sourceTree = "<group>"; };
 		3AFF92A0228BE04700EE0110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AFF92A2228BE04700EE0110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AFF92A5228BE04700EE0110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AFF92A7228BE04700EE0110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AFF933B229057B000EE0110 /* DateStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStructure.swift; sourceTree = "<group>"; };
-		3AFF933D22905AEF00EE0110 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		3AFF933D22905AEF00EE0110 /* MonthlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3AFF934322914A5300EE0110 /* WeeklyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewCell.swift; sourceTree = "<group>"; };
 		3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyTableViewCell.xib; sourceTree = "<group>"; };
 		3AFF934722914BF900EE0110 /* WeeklyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyVC.swift; sourceTree = "<group>"; };
+		3AFF934922917E1300EE0110 /* DailyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				3AFF929B228BE04700EE0110 /* AppDelegate.swift */,
-				3AFF929D228BE04700EE0110 /* ViewController.swift */,
-				3AFF933D22905AEF00EE0110 /* DateCell.swift */,
-				3AFF934722914BF900EE0110 /* WeeklyVC.swift */,
-				3AFF933B229057B000EE0110 /* DateStructure.swift */,
 				3AFF929F228BE04700EE0110 /* Main.storyboard */,
-				3AFF934322914A5300EE0110 /* WeeklyTableViewCell.swift */,
-				3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */,
 				3AFF92A2228BE04700EE0110 /* Assets.xcassets */,
 				3AFF92A4228BE04700EE0110 /* LaunchScreen.storyboard */,
 				3AFF92A7228BE04700EE0110 /* Info.plist */,
+				3AFF934E22917EEE00EE0110 /* Model */,
+				3AFF934C22917E6B00EE0110 /* ViewController */,
+				3AFF934D22917E8B00EE0110 /* Cells */,
 			);
 			path = SHCalendar;
+			sourceTree = "<group>";
+		};
+		3AFF934C22917E6B00EE0110 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF929D228BE04700EE0110 /* MonthlyVC.swift */,
+				3AFF934722914BF900EE0110 /* WeeklyVC.swift */,
+				3AFF934922917E1300EE0110 /* DailyVC.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3AFF934D22917E8B00EE0110 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF933D22905AEF00EE0110 /* MonthlyCollectionViewCell.swift */,
+				3AFF934322914A5300EE0110 /* WeeklyTableViewCell.swift */,
+				3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3AFF934E22917EEE00EE0110 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF933B229057B000EE0110 /* DateStructure.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +179,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFF934522914A5300EE0110 /* WeeklyTableViewCell.swift in Sources */,
-				3AFF929E228BE04700EE0110 /* ViewController.swift in Sources */,
+				3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */,
 				3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */,
 				3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */,
-				3AFF933E22905AEF00EE0110 /* DateCell.swift in Sources */,
+				3AFF933E22905AEF00EE0110 /* MonthlyCollectionViewCell.swift in Sources */,
 				3AFF934822914BF900EE0110 /* WeeklyVC.swift in Sources */,
+				3AFF934A22917E1300EE0110 /* DailyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

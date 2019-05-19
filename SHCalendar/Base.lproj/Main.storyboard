@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MonthlyVC" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFc-i4-Dna"/>
+                                    <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wid-6m-aB5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzE-gW-RzM">
@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="beforeMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="682-i7-ngJ"/>
+                                    <action selector="backMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uy8-MN-xE9"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="46e-Sa-URQ">
@@ -58,7 +58,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="datecell" id="Pn5-kb-FYI" customClass="DateCell" customModule="SHCalendar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="datecell" id="Pn5-kb-FYI" customClass="MonthlyCollectionViewCell" customModule="SHCalendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -66,7 +66,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBd-Aj-nYI">
-                                                    <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                                                    <rect key="frame" x="1.5" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -161,8 +161,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0kj-mq-ltV"/>
                     <connections>
-                        <outlet property="calendarView" destination="46e-Sa-URQ" id="II3-jr-7bd"/>
-                        <outlet property="monthYearLabel" destination="1lg-bE-E8w" id="h7k-q3-mWk"/>
+                        <outlet property="calendarView" destination="46e-Sa-URQ" id="dOH-I4-RQ8"/>
+                        <outlet property="monthYearLabel" destination="1lg-bE-E8w" id="isb-zO-HIr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h39-lq-t1r">
-                                <rect key="frame" x="0.0" y="136" width="414" height="677"/>
+                                <rect key="frame" x="10" y="136" width="394" height="677"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dho-ec-N54" id="gjv-h5-zxW"/>
@@ -205,7 +205,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="1gt-EW-Fmb"/>
-                                    <action selector="beforeMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrd-1Y-HQR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-hh-wvf">
@@ -215,7 +214,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auE-cC-lEo"/>
                                     <action selector="nextWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="WQT-eZ-VCt"/>
                                 </connections>
                             </button>
@@ -228,10 +226,10 @@
                             <constraint firstItem="8j9-nW-q45" firstAttribute="centerX" secondItem="Fl6-L0-tpC" secondAttribute="centerX" id="7uR-Zf-sq5"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="centerX" secondItem="Fl6-L0-tpC" secondAttribute="centerX" id="9iP-sH-lv4"/>
                             <constraint firstItem="8j9-nW-q45" firstAttribute="top" secondItem="PC3-uL-uW5" secondAttribute="top" constant="15" id="VmU-8O-JkM"/>
-                            <constraint firstItem="h39-lq-t1r" firstAttribute="leading" secondItem="PC3-uL-uW5" secondAttribute="leading" id="WU3-qS-eC9"/>
+                            <constraint firstItem="h39-lq-t1r" firstAttribute="leading" secondItem="PC3-uL-uW5" secondAttribute="leading" constant="10" id="WU3-qS-eC9"/>
                             <constraint firstItem="hvO-hh-wvf" firstAttribute="top" secondItem="8j9-nW-q45" secondAttribute="bottom" constant="-21" id="f02-6o-pI3"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="top" secondItem="AIw-Jt-ugm" secondAttribute="bottom" constant="-16" id="gK3-zO-IgO"/>
-                            <constraint firstItem="PC3-uL-uW5" firstAttribute="trailing" secondItem="h39-lq-t1r" secondAttribute="trailing" id="lCY-Ze-qWN"/>
+                            <constraint firstItem="PC3-uL-uW5" firstAttribute="trailing" secondItem="h39-lq-t1r" secondAttribute="trailing" constant="10" id="lCY-Ze-qWN"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="top" secondItem="8j9-nW-q45" secondAttribute="bottom" constant="8" id="lep-mX-HHd"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="top" secondItem="hvO-hh-wvf" secondAttribute="bottom" constant="-16" id="q63-sn-NHn"/>
                             <constraint firstItem="PC3-uL-uW5" firstAttribute="bottom" secondItem="h39-lq-t1r" secondAttribute="bottom" id="rDX-7K-a8g"/>
@@ -253,25 +251,71 @@
         <!--Item-->
         <scene sceneID="Dls-3C-fLf">
             <objects>
-                <viewController id="2u8-iv-idI" sceneMemberID="viewController">
+                <viewController id="2u8-iv-idI" customClass="DailyVC" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nAo-rO-OUj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-l0-gmX">
-                                <rect key="frame" x="186" y="438" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ad7-Ko-Mvw">
+                                <rect key="frame" x="20" y="59" width="30" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backDate:" destination="Lhe-52-7Zm" eventType="touchUpInside" id="qDp-Fo-nyf"/>
+                                    <action selector="backDate:" destination="2u8-iv-idI" eventType="touchUpInside" id="trZ-Zy-xGU"/>
+                                    <action selector="backWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="bnZ-wV-hVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAr-VG-fsj">
+                                <rect key="frame" x="364" y="59" width="30" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextDate:" destination="2u8-iv-idI" eventType="touchUpInside" id="2nQ-AP-1s6"/>
+                                    <action selector="nextDate:" destination="Lhe-52-7Zm" eventType="touchUpInside" id="cFs-Ta-3lp"/>
+                                    <action selector="nextWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="TpV-V7-6Rf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019년 5월 19일 일요일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3C-7p-akh">
+                                <rect key="frame" x="123" y="71" width="168" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ykI-Qt-BaL">
+                                <rect key="frame" x="10" y="136" width="394" height="677"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="677" id="Ede-3m-icb"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ykI-Qt-BaL" secondAttribute="trailing" constant="10" id="7EY-62-dDm"/>
+                            <constraint firstItem="Ad7-Ko-Mvw" firstAttribute="leading" secondItem="Hg5-Wz-0qK" secondAttribute="leading" constant="20" id="7KY-UP-e8H"/>
+                            <constraint firstItem="C3C-7p-akh" firstAttribute="centerY" secondItem="wAr-VG-fsj" secondAttribute="centerY" id="TUq-EB-ovm"/>
+                            <constraint firstItem="Ad7-Ko-Mvw" firstAttribute="top" secondItem="Hg5-Wz-0qK" secondAttribute="top" constant="15" id="YNe-k6-38D"/>
+                            <constraint firstItem="C3C-7p-akh" firstAttribute="centerX" secondItem="nAo-rO-OUj" secondAttribute="centerX" id="hZQ-id-JdY"/>
+                            <constraint firstItem="Hg5-Wz-0qK" firstAttribute="trailing" secondItem="wAr-VG-fsj" secondAttribute="trailing" constant="20" id="lAZ-v7-Tch"/>
+                            <constraint firstItem="Hg5-Wz-0qK" firstAttribute="bottom" secondItem="ykI-Qt-BaL" secondAttribute="bottom" id="q9L-Ml-nMF"/>
+                            <constraint firstItem="ykI-Qt-BaL" firstAttribute="leading" secondItem="Hg5-Wz-0qK" secondAttribute="leading" constant="10" id="qsw-4S-gVr"/>
+                            <constraint firstItem="wAr-VG-fsj" firstAttribute="top" secondItem="Hg5-Wz-0qK" secondAttribute="top" constant="15" id="xio-Id-h17"/>
+                            <constraint firstItem="C3C-7p-akh" firstAttribute="centerY" secondItem="Ad7-Ko-Mvw" secondAttribute="centerY" id="zQ8-nM-WHz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hg5-Wz-0qK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="8jp-AI-Bgt"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="C3C-7p-akh" id="A6d-ZG-CFh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6g-2x-Ror" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lhe-52-7Zm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="618.75"/>
         </scene>

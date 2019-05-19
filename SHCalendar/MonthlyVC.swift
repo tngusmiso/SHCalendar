@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MonthlyVC: UIViewController {
     let cellIdentifier: String = "datecell"
     var dates: [String] = []
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         calendarView.reloadData()
     }
     
-    @IBAction func beforeMonth(_ sender: Any) {
+    @IBAction func backMonth(_ sender: Any) {
         if month <= 0 { month = 11; year -= 1 }
         else { month -= 1 }
         
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MonthlyVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -64,7 +64,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: DateCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DateCell
+        let cell: MonthlyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MonthlyCollectionViewCell
         cell.backgroundColor = UIColor.clear
         
         if indexPath.item < startDay.rawValue{
