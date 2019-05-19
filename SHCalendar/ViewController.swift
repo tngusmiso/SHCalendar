@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     let cellIdentifier: String = "datecell"
-    let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
     var dates: [String] = []
     
-    var isYoon = false
-    var date = 0
-    var startDay:Days = .SUN
+    var year = today.year
+    var month = today.month
+    var date = today.date
+    var monthInfo = getMonthInfo(year: today.year, month: today.month)
     
     var selectedCell: UICollectionViewCell?
     
@@ -25,9 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getThisMonthCal(year: todayYear, month: todayMonth)
+        getThisMonthCal(year: today.year, month: today.month)
     }
-    
     
     func getThisMonthCal(year: Int, month: Int) {
         startDay = getMonthInfo(year: year, month: month).startDay
@@ -73,7 +72,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         } else {
             let date = indexPath.item - startDay.rawValue + 1
             cell.dateLabel.text = "\(date)"
-            if year == todayYear && month == todayMonth && date == today {
+            if year == today.year && month == today.month && date == today.date {
                 selectedCell = cell
                 selectedCell?.backgroundColor = UIColor.yellow
             }

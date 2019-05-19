@@ -8,19 +8,41 @@
 
 import Foundation
 
-let cal = Calendar.current
-let todayYear = cal.component(.year, from: Date())
-let todayMonth = cal.component(.month, from: Date()) - 1
-let today = cal.component(.day, from: Date())
 
-var year = todayYear
-var month = todayMonth
-var isYoon = getMonthInfo(year: year, month: month).isYoonYear
-var startDay = getMonthInfo(year: year, month: month).startDay
+let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+let cal = Calendar.current
+let today = DateInfo(
+    year: cal.component(.year, from: Date()),
+    month: cal.component(.month, from: Date()) - 1,
+    date: cal.component(.day, from: Date()))
+
+var isYoon = getMonthInfo(year: today.year, month: today.month).isYoonYear
+var startDay = getMonthInfo(year: today.year, month: today.month).startDay
+
 
 struct MonthInfo {
     let isYoonYear: Bool
     let startDay: Days
+}
+
+struct WeekInfo {
+    let startDate: DateInfo
+    let endDate: DateInfo
+}
+
+struct DateInfo {
+    let year: Int
+    let month: Int
+    let date: Int
+    
+    var day: Days {
+        return getDay(year: year, month: month, date: date)
+    }
+    
+    var isYoon: Bool {
+        return (year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0
+    }
 }
 
 enum Days: Int {
@@ -34,7 +56,6 @@ enum Days: Int {
 }
 
 func getMonthInfo (year: Int, month: Int) -> MonthInfo {
-    let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
     var isYoon: Bool = false
     var startDay: Days = .SUN
     
@@ -56,4 +77,9 @@ func getMonthInfo (year: Int, month: Int) -> MonthInfo {
     
     startDay = Days(rawValue: (allday + 1) % 7) ?? .SUN
     return MonthInfo(isYoonYear: isYoon, startDay: startDay)    
+}
+
+func getDay (year: Int, month: Int, date: Int) -> Days{
+    let startDay = getMonthInfo(year: year ,month: month).startDay
+    return Days(rawValue: date%7 + startDay.rawValue - 1) ?? .SUN
 }

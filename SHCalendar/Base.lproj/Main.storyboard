@@ -172,14 +172,18 @@
         <!--Item-->
         <scene sceneID="PI8-8R-hgx">
             <objects>
-                <viewController id="dho-ec-N54" sceneMemberID="viewController">
+                <viewController id="dho-ec-N54" customClass="WeeklyVC" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fl6-L0-tpC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h39-lq-t1r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h39-lq-t1r">
                                 <rect key="frame" x="0.0" y="136" width="414" height="677"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dho-ec-N54" id="gjv-h5-zxW"/>
+                                    <outlet property="delegate" destination="dho-ec-N54" id="X1R-Py-nBf"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-nW-q45">
                                 <rect key="frame" x="188" y="59" width="38.5" height="21"/>
@@ -200,6 +204,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="backWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="1gt-EW-Fmb"/>
                                     <action selector="beforeMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrd-1Y-HQR"/>
                                 </connections>
                             </button>
@@ -211,6 +216,7 @@
                                 </state>
                                 <connections>
                                     <action selector="nextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auE-cC-lEo"/>
+                                    <action selector="nextWeek:" destination="dho-ec-N54" eventType="touchUpInside" id="WQT-eZ-VCt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -221,7 +227,6 @@
                             <constraint firstItem="AIw-Jt-ugm" firstAttribute="leading" secondItem="PC3-uL-uW5" secondAttribute="leading" constant="20" id="7FH-CN-7Ph"/>
                             <constraint firstItem="8j9-nW-q45" firstAttribute="centerX" secondItem="Fl6-L0-tpC" secondAttribute="centerX" id="7uR-Zf-sq5"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="centerX" secondItem="Fl6-L0-tpC" secondAttribute="centerX" id="9iP-sH-lv4"/>
-                            <constraint firstItem="h39-lq-t1r" firstAttribute="top" secondItem="PC3-uL-uW5" secondAttribute="top" id="BSa-yV-t1Y"/>
                             <constraint firstItem="8j9-nW-q45" firstAttribute="top" secondItem="PC3-uL-uW5" secondAttribute="top" constant="15" id="VmU-8O-JkM"/>
                             <constraint firstItem="h39-lq-t1r" firstAttribute="leading" secondItem="PC3-uL-uW5" secondAttribute="leading" id="WU3-qS-eC9"/>
                             <constraint firstItem="hvO-hh-wvf" firstAttribute="top" secondItem="8j9-nW-q45" secondAttribute="bottom" constant="-21" id="f02-6o-pI3"/>
@@ -230,10 +235,16 @@
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="top" secondItem="8j9-nW-q45" secondAttribute="bottom" constant="8" id="lep-mX-HHd"/>
                             <constraint firstItem="Qup-d7-jU9" firstAttribute="top" secondItem="hvO-hh-wvf" secondAttribute="bottom" constant="-16" id="q63-sn-NHn"/>
                             <constraint firstItem="PC3-uL-uW5" firstAttribute="bottom" secondItem="h39-lq-t1r" secondAttribute="bottom" id="rDX-7K-a8g"/>
+                            <constraint firstItem="h39-lq-t1r" firstAttribute="top" secondItem="Qup-d7-jU9" secondAttribute="bottom" constant="24" id="vgv-53-Pcj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PC3-uL-uW5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jys-bF-TLx"/>
+                    <connections>
+                        <outlet property="weekLabel" destination="Qup-d7-jU9" id="Nb1-Lg-fO6"/>
+                        <outlet property="weeklyCalendarView" destination="h39-lq-t1r" id="vUz-5x-Byo"/>
+                        <outlet property="yearLabel" destination="8j9-nW-q45" id="hKU-is-Xh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Htm-ee-x0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
