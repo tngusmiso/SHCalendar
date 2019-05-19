@@ -9,12 +9,83 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let cellIdentifier: String = "datecell"
+    let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
+    var dates: [String] = []
+    
+    var isYoon = false
+    var date = 0
+    var startDay:Days = .SUN
+    
+    var selectedCell: UICollectionViewCell?
+    
+    @IBOutlet weak var monthYearLabel: UILabel!
+    @IBOutlet weak var calendarView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        getThisMonthCal(year: todayYear, month: todayMonth)
     }
+    
+    
+    func getThisMonthCal(year: Int, month: Int) {
+        startDay = getMonthInfo(year: year, month: month).startDay
+        isYoon = getMonthInfo(year: year, month: month).isYoonYear
+        monthYearLabel.text = "\(month+1), \(year)"
+        calendarView.reloadData()
+    }
+    
+    @IBAction func beforeMonth(_ sender: Any) {
+        if month <= 0 { month = 11; year -= 1 }
+        else { month -= 1 }
+        
+        getThisMonthCal(year: year, month: month)
+    }
+    
+    @IBAction func nextMonth(_ sender: Any) {
+        if month >= 11 { month = 0; year += 1 }
+        else { month += 1 }
+        
+        getThisMonthCal(year: year, month: month)
+    }
+}
 
-
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if month == 1 && isYoon{
+            return 29 + startDay.rawValue
+        }
+        return months[month] + startDay.rawValue
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: DateCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! DateCell
+        cell.backgroundColor = UIColor.clear
+        
+        if indexPath.item < startDay.rawValue{
+            cell.dateLabel.text = ""
+        } else {
+            let date = indexPath.item - startDay.rawValue + 1
+            cell.dateLabel.text = "\(date)"
+            if year == todayYear && month == todayMonth && date == today {
+                selectedCell = cell
+                selectedCell?.backgroundColor = UIColor.yellow
+            }
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCell?.backgroundColor = UIColor.clear
+        selectedCell = collectionView.cellForItem(at: indexPath)
+        selectedCell?.backgroundColor = UIColor.yellow
+    }
+    
 }
 
