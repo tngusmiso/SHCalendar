@@ -453,10 +453,10 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="618.75"/>
         </scene>
-        <!--Remembering Tab Bar Controller-->
+        <!--Root Tab Bar Controller-->
         <scene sceneID="X8J-A5-2VZ">
             <objects>
-                <tabBarController storyboardIdentifier="RootTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fn0-wp-Kl7" customClass="RememberingTabBarController" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fn0-wp-Kl7" customClass="RootTabBarController" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tBb-45-sr1">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

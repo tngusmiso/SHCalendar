@@ -35,11 +35,14 @@ class AddSchedulVC: UIViewController {
     }
     
     @IBAction func okButton(_ sender: Any) {
+        
         guard let content = textField.text else {
-            let alert: UIAlertController = UIAlertController(title: "일정 등록 실패", message: "내용이 없습니다.", preferredStyle: .alert)
-            let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-            alert.addAction(cancelAction)
-            present(alert, animated: true, completion: nil)
+            emptyContent()
+            return
+        }
+        
+        if content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty  {
+            emptyContent()
             return
         }
         
@@ -51,6 +54,13 @@ class AddSchedulVC: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func emptyContent(){
+        let alert: UIAlertController = UIAlertController(title: "일정 등록 실패", message: "내용이 없습니다.", preferredStyle: .alert)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func changed(){

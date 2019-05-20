@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AAF768E22929B1000F0487B /* RememberingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF768D22929B1000F0487B /* RememberingTabBarController.swift */; };
+		3AAF769122929DE500F0487B /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF769022929DE500F0487B /* RootTabBarController.swift */; };
 		3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929B228BE04700EE0110 /* AppDelegate.swift */; };
 		3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929D228BE04700EE0110 /* MonthlyVC.swift */; };
 		3AFF92A1228BE04700EE0110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF929F228BE04700EE0110 /* Main.storyboard */; };
@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3AAF768D22929B1000F0487B /* RememberingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberingTabBarController.swift; sourceTree = "<group>"; };
+		3AAF769022929DE500F0487B /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		3AFF9298228BE04700EE0110 /* SHCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFF929B228BE04700EE0110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFF929D228BE04700EE0110 /* MonthlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyVC.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 			children = (
 				3AFF929B228BE04700EE0110 /* AppDelegate.swift */,
 				3AFF929F228BE04700EE0110 /* Main.storyboard */,
-				3AAF768D22929B1000F0487B /* RememberingTabBarController.swift */,
 				3AFF935C229286A600EE0110 /* Assets 15-54-13-988.xcassets */,
 				3AFF92A4228BE04700EE0110 /* LaunchScreen.storyboard */,
 				3AFF92A7228BE04700EE0110 /* Info.plist */,
@@ -106,6 +105,7 @@
 				3AFF934722914BF900EE0110 /* WeeklyVC.swift */,
 				3AFF934922917E1300EE0110 /* DailyVC.swift */,
 				3AFF935022918B7800EE0110 /* AddSchedulVC.swift */,
+				3AAF769022929DE500F0487B /* RootTabBarController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -279,9 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */,
+				3AAF769122929DE500F0487B /* RootTabBarController.swift in Sources */,
 				3AFF934522914A5300EE0110 /* WeeklyTableViewCell.swift in Sources */,
 				3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */,
-				3AAF768E22929B1000F0487B /* RememberingTabBarController.swift in Sources */,
 				3AFF93532292312300EE0110 /* ScheduleTaskCreator.swift in Sources */,
 				3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */,
 				3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */,
@@ -437,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PFQJNQ37T;
 				INFOPLIST_FILE = SHCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PFQJNQ37T;
 				INFOPLIST_FILE = SHCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
