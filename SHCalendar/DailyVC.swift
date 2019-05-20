@@ -15,11 +15,18 @@ class DailyVC: UIViewController {
     let cellidentifier: String = "dailyCell"
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dailyCalendarView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nibName = UINib(nibName: "DailyTableViewCell", bundle: nil)
+        dailyCalendarView.register(nibName, forCellReuseIdentifier: cellidentifier)
+        
         setDateLabel()
-        AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        
+        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        dailyCalendarView.reloadData()
     }
     
     func setDateLabel(){
@@ -57,6 +64,9 @@ class DailyVC: UIViewController {
         
         dateInfo = DateInfo(year: year, month: month, date: date)
         setDateLabel()
+        
+        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        dailyCalendarView.reloadData()
     }
     
     @IBAction func nextDate(_ sender: Any) {
@@ -82,6 +92,9 @@ class DailyVC: UIViewController {
         
         dateInfo = DateInfo(year: year, month: month, date: date)
         setDateLabel()
+        
+        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        dailyCalendarView.reloadData()
     }
 }
 
@@ -91,7 +104,7 @@ extension DailyVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: WeeklyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath) as! WeeklyTableViewCell
+        let cell: DailyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath) as! DailyTableViewCell
         
         switch indexPath.section {
         case 0:

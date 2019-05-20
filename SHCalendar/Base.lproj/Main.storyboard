@@ -395,6 +395,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ykI-Qt-BaL">
                                 <rect key="frame" x="10" y="127" width="394" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2u8-iv-idI" id="PhC-h0-ZHZ"/>
+                                    <outlet property="delegate" destination="2u8-iv-idI" id="uat-4S-Vos"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auD-AH-Wo5">
                                 <rect key="frame" x="14.5" y="748" width="385" height="35"/>
@@ -433,6 +437,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="8jp-AI-Bgt" userLabel="Daily"/>
                     <connections>
+                        <outlet property="dailyCalendarView" destination="ykI-Qt-BaL" id="WIv-Xe-SK1"/>
                         <outlet property="dateLabel" destination="C3C-7p-akh" id="A6d-ZG-CFh"/>
                     </connections>
                 </viewController>
