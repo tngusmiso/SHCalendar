@@ -19,7 +19,10 @@ class AddSchedulVC: UIViewController {
         super.viewDidLoad()
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(changed), for: .valueChanged)
-        // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -80,5 +83,12 @@ class AddSchedulVC: UIViewController {
         selectedDate = DateInfo(year: year, month: month-1, date: date)
         print ("\(year).\(month).\(date)")
     
+    }
+}
+
+extension AddSchedulVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
