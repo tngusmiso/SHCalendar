@@ -18,6 +18,12 @@
 		3AFF934622914A5300EE0110 /* WeeklyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */; };
 		3AFF934822914BF900EE0110 /* WeeklyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934722914BF900EE0110 /* WeeklyVC.swift */; };
 		3AFF934A22917E1300EE0110 /* DailyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934922917E1300EE0110 /* DailyVC.swift */; };
+		3AFF935122918B7800EE0110 /* AddSchedulVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935022918B7800EE0110 /* AddSchedulVC.swift */; };
+		3AFF93532292312300EE0110 /* AddScheduleTaskCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */; };
+		3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935422923AD000EE0110 /* ScheduleStructure.swift */; };
+		3AFF935A22926C2900EE0110 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */; };
+		3AFF935B22926C2900EE0110 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */; };
+		A7D8639742A65D75803F4B82 /* Pods_SHCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C922C7175DE754EE3D85C523 /* Pods_SHCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,14 @@
 		3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyTableViewCell.xib; sourceTree = "<group>"; };
 		3AFF934722914BF900EE0110 /* WeeklyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyVC.swift; sourceTree = "<group>"; };
 		3AFF934922917E1300EE0110 /* DailyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVC.swift; sourceTree = "<group>"; };
+		3AFF935022918B7800EE0110 /* AddSchedulVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchedulVC.swift; sourceTree = "<group>"; };
+		3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleTaskCreator.swift; sourceTree = "<group>"; };
+		3AFF935422923AD000EE0110 /* ScheduleStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStructure.swift; sourceTree = "<group>"; };
+		3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		C922C7175DE754EE3D85C523 /* Pods_SHCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF8302DC85CD91206E669FF2 /* Pods-SHCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCalendar.release.xcconfig"; path = "Target Support Files/Pods-SHCalendar/Pods-SHCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		FEE2B49AB81221C06EB45616 /* Pods-SHCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCalendar.debug.xcconfig"; path = "Target Support Files/Pods-SHCalendar/Pods-SHCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D8639742A65D75803F4B82 /* Pods_SHCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +67,8 @@
 			children = (
 				3AFF929A228BE04700EE0110 /* SHCalendar */,
 				3AFF9299228BE04700EE0110 /* Products */,
+				744219586BD339292FB548D4 /* Pods */,
+				7D0B941DF3B40ECF21D68AB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +91,7 @@
 				3AFF934E22917EEE00EE0110 /* Model */,
 				3AFF934C22917E6B00EE0110 /* ViewController */,
 				3AFF934D22917E8B00EE0110 /* Cells */,
+				3AFF934F2291869100EE0110 /* Database */,
 			);
 			path = SHCalendar;
 			sourceTree = "<group>";
@@ -84,6 +102,7 @@
 				3AFF929D228BE04700EE0110 /* MonthlyVC.swift */,
 				3AFF934722914BF900EE0110 /* WeeklyVC.swift */,
 				3AFF934922917E1300EE0110 /* DailyVC.swift */,
+				3AFF935022918B7800EE0110 /* AddSchedulVC.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -94,6 +113,8 @@
 				3AFF933D22905AEF00EE0110 /* MonthlyCollectionViewCell.swift */,
 				3AFF934322914A5300EE0110 /* WeeklyTableViewCell.swift */,
 				3AFF934422914A5300EE0110 /* WeeklyTableViewCell.xib */,
+				3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */,
+				3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -102,8 +123,34 @@
 			isa = PBXGroup;
 			children = (
 				3AFF933B229057B000EE0110 /* DateStructure.swift */,
+				3AFF935422923AD000EE0110 /* ScheduleStructure.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3AFF934F2291869100EE0110 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		744219586BD339292FB548D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEE2B49AB81221C06EB45616 /* Pods-SHCalendar.debug.xcconfig */,
+				DF8302DC85CD91206E669FF2 /* Pods-SHCalendar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D0B941DF3B40ECF21D68AB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C922C7175DE754EE3D85C523 /* Pods_SHCalendar.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AFF92AA228BE04700EE0110 /* Build configuration list for PBXNativeTarget "SHCalendar" */;
 			buildPhases = (
+				D8020C48A07230B2E0F6E4FE /* [CP] Check Pods Manifest.lock */,
 				3AFF9294228BE04700EE0110 /* Sources */,
 				3AFF9295228BE04700EE0110 /* Frameworks */,
 				3AFF9296228BE04700EE0110 /* Resources */,
+				35C0EE2F36147A3745A93FC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFF934622914A5300EE0110 /* WeeklyTableViewCell.xib in Resources */,
+				3AFF935B22926C2900EE0110 /* DailyTableViewCell.xib in Resources */,
 				3AFF92A6228BE04700EE0110 /* LaunchScreen.storyboard in Resources */,
 				3AFF92A3228BE04700EE0110 /* Assets.xcassets in Resources */,
 				3AFF92A1228BE04700EE0110 /* Main.storyboard in Resources */,
@@ -173,15 +223,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35C0EE2F36147A3745A93FC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SHCalendar/Pods-SHCalendar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SHCalendar/Pods-SHCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8020C48A07230B2E0F6E4FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SHCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3AFF9294228BE04700EE0110 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */,
 				3AFF934522914A5300EE0110 /* WeeklyTableViewCell.swift in Sources */,
 				3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */,
+				3AFF93532292312300EE0110 /* AddScheduleTaskCreator.swift in Sources */,
 				3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */,
 				3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */,
+				3AFF935122918B7800EE0110 /* AddSchedulVC.swift in Sources */,
+				3AFF935A22926C2900EE0110 /* DailyTableViewCell.swift in Sources */,
 				3AFF933E22905AEF00EE0110 /* MonthlyCollectionViewCell.swift in Sources */,
 				3AFF934822914BF900EE0110 /* WeeklyVC.swift in Sources */,
 				3AFF934A22917E1300EE0110 /* DailyVC.swift in Sources */,
@@ -328,6 +429,7 @@
 		};
 		3AFF92AB228BE04700EE0110 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEE2B49AB81221C06EB45616 /* Pods-SHCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -345,6 +447,7 @@
 		};
 		3AFF92AC228BE04700EE0110 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF8302DC85CD91206E669FF2 /* Pods-SHCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

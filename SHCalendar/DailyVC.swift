@@ -10,12 +10,16 @@ import UIKit
 
 class DailyVC: UIViewController {
     var dateInfo: DateInfo = today
+    var schedules: [Schedule] = []
+    
+    let cellidentifier: String = "dailyCell"
     
     @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDateLabel()
+        AddScheduleTaskCreator().readSchedule(date: dateInfo)
     }
     
     func setDateLabel(){
@@ -79,4 +83,25 @@ class DailyVC: UIViewController {
         dateInfo = DateInfo(year: year, month: month, date: date)
         setDateLabel()
     }
+}
+
+extension DailyVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return schedules.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: WeeklyTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellidentifier, for: indexPath) as! WeeklyTableViewCell
+        
+        switch indexPath.section {
+        case 0:
+            cell.contentLabel.text = schedules[indexPath.row].content
+        default:
+            break
+        }
+        
+        return cell
+    }
+    
+    
 }

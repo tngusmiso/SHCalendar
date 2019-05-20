@@ -8,8 +8,17 @@
 
 import Foundation
 
-
-let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
+// MARK: - 전역변수
+let months: [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]   // 달마다 날짜 수
+enum Days: Int {    // 요일
+    case SUN = 0
+    case MON = 1
+    case TUE = 2
+    case WED = 3
+    case THU = 4
+    case FRI = 5
+    case SAT = 6
+}
 
 let cal = Calendar.current
 let today = DateInfo(
@@ -20,7 +29,7 @@ let today = DateInfo(
 var isYoon = getMonthInfo(year: today.year, month: today.month).isYoonYear
 var startDay = getMonthInfo(year: today.year, month: today.month).startDay
 
-
+// MARK: - 날짜 정보 구조체
 struct MonthInfo {
     let isYoonYear: Bool
     let startDay: Days
@@ -45,16 +54,7 @@ struct DateInfo {
     }
 }
 
-enum Days: Int {
-    case SUN = 0
-    case MON = 1
-    case TUE
-    case WED
-    case THU
-    case FRI
-    case SAT
-}
-
+// MARK: - 날짜 정보 가져오는 함수들
 func getMonthInfo (year: Int, month: Int) -> MonthInfo {
     var isYoon: Bool = false
     var startDay: Days = .SUN
