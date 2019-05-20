@@ -25,7 +25,7 @@ class DailyVC: UIViewController {
         
         setDateLabel()
         
-        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        schedules = ScheduleTaskCreator().readSchedule(date: dateInfo)
         dailyCalendarView.reloadData()
     }
     
@@ -45,55 +45,18 @@ class DailyVC: UIViewController {
     }
     
     @IBAction func backDate(_ sender: Any) {
-        var year = dateInfo.year
-        var month = dateInfo.month
-        var date = dateInfo.date
-        
-        if date <= 1 {
-            if month <= 0 {
-                year -= 1
-                month = 11
-                date = 31
-            } else {
-                month -= 1
-                if month == 1 && dateInfo.isYoon {
-                    date = 29
-                } else { date = months[month] }
-            }
-        } else { date -= 1 }
-        
-        dateInfo = DateInfo(year: year, month: month, date: date)
+        dateInfo = dateInfo.getBackDate
         setDateLabel()
         
-        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        schedules = ScheduleTaskCreator().readSchedule(date: dateInfo)
         dailyCalendarView.reloadData()
     }
     
     @IBAction func nextDate(_ sender: Any) {
-        var year = dateInfo.year
-        var month = dateInfo.month
-        var date = dateInfo.date
-        
-        if dateInfo.isYoon && month == 1 && date == 29 {
-            dateInfo = DateInfo(year: year+1, month: month+1, date: 1)
-            setDateLabel()
-            return
-        } else if date >= months[month] {
-            if month == 12 {
-                year += 1
-                month = 0
-                date = 1
-            } else {
-                month += 1
-                date = 1
-            }
-            
-        } else { date += 1 }
-        
-        dateInfo = DateInfo(year: year, month: month, date: date)
+        dateInfo = dateInfo.getNextDate
         setDateLabel()
         
-        schedules = AddScheduleTaskCreator().readSchedule(date: dateInfo)
+        schedules = ScheduleTaskCreator().readSchedule(date: dateInfo)
         dailyCalendarView.reloadData()
     }
 }

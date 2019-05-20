@@ -19,7 +19,7 @@
 		3AFF934822914BF900EE0110 /* WeeklyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934722914BF900EE0110 /* WeeklyVC.swift */; };
 		3AFF934A22917E1300EE0110 /* DailyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF934922917E1300EE0110 /* DailyVC.swift */; };
 		3AFF935122918B7800EE0110 /* AddSchedulVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935022918B7800EE0110 /* AddSchedulVC.swift */; };
-		3AFF93532292312300EE0110 /* AddScheduleTaskCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */; };
+		3AFF93532292312300EE0110 /* ScheduleTaskCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF93522292312300EE0110 /* ScheduleTaskCreator.swift */; };
 		3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935422923AD000EE0110 /* ScheduleStructure.swift */; };
 		3AFF935A22926C2900EE0110 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */; };
 		3AFF935B22926C2900EE0110 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */; };
@@ -41,7 +41,7 @@
 		3AFF934722914BF900EE0110 /* WeeklyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyVC.swift; sourceTree = "<group>"; };
 		3AFF934922917E1300EE0110 /* DailyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyVC.swift; sourceTree = "<group>"; };
 		3AFF935022918B7800EE0110 /* AddSchedulVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchedulVC.swift; sourceTree = "<group>"; };
-		3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleTaskCreator.swift; sourceTree = "<group>"; };
+		3AFF93522292312300EE0110 /* ScheduleTaskCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskCreator.swift; sourceTree = "<group>"; };
 		3AFF935422923AD000EE0110 /* ScheduleStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStructure.swift; sourceTree = "<group>"; };
 		3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		3AFF934F2291869100EE0110 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				3AFF93522292312300EE0110 /* AddScheduleTaskCreator.swift */,
+				3AFF93522292312300EE0110 /* ScheduleTaskCreator.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 				3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */,
 				3AFF934522914A5300EE0110 /* WeeklyTableViewCell.swift in Sources */,
 				3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */,
-				3AFF93532292312300EE0110 /* AddScheduleTaskCreator.swift in Sources */,
+				3AFF93532292312300EE0110 /* ScheduleTaskCreator.swift in Sources */,
 				3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */,
 				3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */,
 				3AFF935122918B7800EE0110 /* AddSchedulVC.swift in Sources */,

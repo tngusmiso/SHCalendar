@@ -52,6 +52,52 @@ struct DateInfo {
     var isYoon: Bool {
         return (year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0
     }
+    
+    var getNextDate: DateInfo {
+        var year = self.year
+        var month = self.month
+        var date = self.date
+        var newInfo: DateInfo = DateInfo(year: year, month: month, date: date)
+        
+        if self.isYoon && month == 1 && date == 29 {
+            newInfo = DateInfo(year: year+1, month: month+1, date: 1)
+            return newInfo
+        } else if date >= months[month] {
+            if month == 12 {
+                year += 1
+                month = 0
+                date = 1
+            } else {
+                month += 1
+                date = 1
+            }
+            
+        } else { date += 1 }
+        
+        newInfo = DateInfo(year: year, month: month, date: date)
+        return newInfo
+    }
+    
+    var getBackDate: DateInfo{
+        var year = self.year
+        var month = self.month
+        var date = self.date
+        
+        if date <= 1 {
+            if month <= 0 {
+                year -= 1
+                month = 11
+                date = 31
+            } else {
+                month -= 1
+                if month == 1 && self.isYoon {
+                    date = 29
+                } else { date = months[month] }
+            }
+        } else { date -= 1 }
+        
+        return DateInfo(year: year, month: month, date: date)
+    }
 }
 
 // MARK: - 날짜 정보 가져오는 함수들
@@ -84,3 +130,5 @@ func getDay (year: Int, month: Int, date: Int) -> Days{
     let value = (date % 7 + startDay.rawValue - 1) % 7
     return Days(rawValue: value)!
 }
+
+

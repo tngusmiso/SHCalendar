@@ -26,11 +26,10 @@ class MonthlyVC: UIViewController {
         super.viewDidLoad()
         
         getThisMonthCal(year: today.year, month: today.month)
-        AddScheduleTaskCreator().readSchedule(date: DateInfo(year: 2019, month: 4, date: 22))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        AddScheduleTaskCreator().readSchedule(date: DateInfo(year: 2019, month: 4, date: 22))
+        calendarView.reloadData()
     }
     
     func getThisMonthCal(year: Int, month: Int) {

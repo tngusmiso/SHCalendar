@@ -42,7 +42,7 @@ class AddSchedulVC: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
-        if AddScheduleTaskCreator().addSchedule(date: selectedDate, content: textView.text) {
+        if ScheduleTaskCreator().addSchedule(data: selectedDate, content: textView.text) {
             let alert: UIAlertController = UIAlertController(title: "일정 등록 성공", message: "일정을 등록하였습니다.", preferredStyle: .alert)
             let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
                 self.dismiss(animated: true, completion: nil)

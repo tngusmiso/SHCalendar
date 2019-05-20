@@ -10,7 +10,8 @@ import UIKit
 
 class WeeklyVC: UIViewController {
     let cellidentifier = "weaklyCell"
-    var weekInfo: WeekInfo?
+    var weekInfo: WeekInfo = WeekInfo(startDate: today, endDate: today)
+    var schedules: [Schedule] = []
 
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var weekLabel: UILabel!
@@ -23,12 +24,17 @@ class WeeklyVC: UIViewController {
         
         let nibName = UINib(nibName: "WeeklyTableViewCell", bundle: nil)
         weeklyCalendarView.register(nibName, forCellReuseIdentifier: cellidentifier)
+        
+        
+        schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
+        print(schedules)
+        weeklyCalendarView.reloadData()
         setLabels()
     }
     
     func setLabels(){
-        yearLabel.text = "\(weekInfo!.endDate.year)"
-        weekLabel.text = "\(weekInfo!.startDate.month+1).\(weekInfo!.startDate.date) ~ \(weekInfo!.endDate.month+1).\(weekInfo!.endDate.date)."
+        yearLabel.text = "\(weekInfo.endDate.year)"
+        weekLabel.text = "\(weekInfo.startDate.month+1).\(weekInfo.startDate.date) ~ \(weekInfo.endDate.month+1).\(weekInfo.endDate.date)."
     }
     
     func getFirstDay() -> DateInfo {
@@ -129,17 +135,22 @@ class WeeklyVC: UIViewController {
     
     @IBAction func backWeek(_ sender: Any) {
         weekInfo = WeekInfo(
-            startDate: findWeekBefore(info: weekInfo?.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
-            endDate: findWeekBefore(info: weekInfo?.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
+            startDate: findWeekBefore(info: weekInfo.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
+            endDate: findWeekBefore(info: weekInfo.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
         setLabels()
+        
+        schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
+        weeklyCalendarView.reloadData()
     }
     
     @IBAction func nextWeek(_ sender: Any) {
         weekInfo = WeekInfo(
-            startDate: findWeekNext(info: weekInfo?.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
-            endDate: findWeekNext(info: weekInfo?.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
+            startDate: findWeekNext(info: weekInfo.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
+            endDate: findWeekNext(info: weekInfo.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
         setLabels()
         
+        schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
+        weeklyCalendarView.reloadData()
     }
     
 }
@@ -147,7 +158,7 @@ class WeeklyVC: UIViewController {
 extension WeeklyVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return schedules.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -155,8 +166,8 @@ extension WeeklyVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.dateLabel.text = "05.06."
-            cell.contentLabel.text = "내용"
+            cell.dateLabel.text = "\(schedules[indexPath.row].date.month + 1).\(schedules[indexPath.row].date.date)"
+            cell.contentLabel.text = "\(schedules[indexPath.row].content)"
         default:
             break
         }
