@@ -105,7 +105,6 @@ struct ScheduleTaskCreator {
             
             // select
             for date in dates {
-                print("날짜 \(date.date)")
                 let selectSQL = "SELECT content FROM SCHEDULE WHERE year = '\(date.year)' AND month = '\(date.month)'AND day = '\(date.date)'"
                 
                 let rs = try database.executeQuery(selectSQL, values: [])
@@ -127,25 +126,25 @@ struct ScheduleTaskCreator {
     }
     
     // MARK : 한달 일정
-    func readSchedule(date: DateInfo) -> [Schedule]{
-        var repo: [Schedule] = []
+    func readSchedule(year: Int, month: Int) -> [String]{
+        var repo: [String] = []
         let database = FMDatabase(url: fileURL)
         guard database.open() else {
             print("Unable to open database")
             return []
         }
         
-        do {
+        do {            
             // 테이블 생성
             try database.executeUpdate("CREATE TABLE IF NOT EXISTS SCHEDULE(year int, month int, day int, content text)", values: nil)
             
             // select
-            let selectSQL = "SELECT content FROM SCHEDULE WHERE year = '\(date.year)' AND month = '\(date.month)'AND day = '\(date.date)'"
+            let selectSQL = "SELECT day, content FROM SCHEDULE WHERE year = '\(year)' AND month = '\(month)'"
             let rs = try database.executeQuery(selectSQL, values: [])
             while rs.next() {
-                if let c = rs.string(forColumn: "content") {
-                    print("[\(date.year).\(date.month+1).\(date.date): \(c)]")
-                    repo.append(Schedule(date: DateInfo(year: date.year, month: date.month, date: date.date), content: c))
+                if let d = rs.string(forColumn: "day"), let c = rs.string(forColumn: "content") {
+                    print("[\(year).\(month+1).\(d): \(c)]")
+                    repo.append(d)
                 }
             }
             database.close()

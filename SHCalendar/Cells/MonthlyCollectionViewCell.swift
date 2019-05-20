@@ -10,5 +10,6 @@ import UIKit
 
 class MonthlyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var hasSchedule: UIView!
+       
 }

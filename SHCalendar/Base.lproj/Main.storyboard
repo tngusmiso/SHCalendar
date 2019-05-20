@@ -71,14 +71,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISX-Op-VQ4">
+                                                    <rect key="frame" x="36" y="1" width="8" height="8"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="8" id="DjU-Xx-8Vx"/>
+                                                        <constraint firstAttribute="height" constant="8" id="aSj-rn-jmx"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="bBd-Aj-nYI" firstAttribute="centerX" secondItem="Pn5-kb-FYI" secondAttribute="centerX" id="PDl-eB-l5C"/>
+                                            <constraint firstAttribute="trailing" secondItem="ISX-Op-VQ4" secondAttribute="trailing" constant="1" id="Zoe-nW-5UC"/>
                                             <constraint firstItem="bBd-Aj-nYI" firstAttribute="centerY" secondItem="Pn5-kb-FYI" secondAttribute="centerY" id="aMf-bt-UB1"/>
+                                            <constraint firstItem="ISX-Op-VQ4" firstAttribute="top" secondItem="Pn5-kb-FYI" secondAttribute="top" constant="1" id="qop-mL-Gen"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dateLabel" destination="bBd-Aj-nYI" id="4sx-Sc-011"/>
+                                            <outlet property="hasSchedule" destination="ISX-Op-VQ4" id="TmG-fo-kzn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -180,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="-668.30357142857144"/>
         </scene>
-        <!--Item-->
+        <!--Weekly-->
         <scene sceneID="PI8-8R-hgx">
             <objects>
                 <viewController id="dho-ec-N54" customClass="WeeklyVC" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,7 +273,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PC3-uL-uW5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jys-bF-TLx" userLabel="Weekly"/>
+                    <tabBarItem key="tabBarItem" title="Weekly" id="jys-bF-TLx" userLabel="Weekly"/>
                     <connections>
                         <outlet property="weekLabel" destination="Qup-d7-jU9" id="Nb1-Lg-fO6"/>
                         <outlet property="weeklyCalendarView" destination="h39-lq-t1r" id="vUz-5x-Byo"/>
@@ -354,7 +364,7 @@
             </objects>
             <point key="canvasLocation" x="2069.5652173913045" y="-19.419642857142858"/>
         </scene>
-        <!--Item-->
+        <!--Daily-->
         <scene sceneID="Dls-3C-fLf">
             <objects>
                 <viewController id="2u8-iv-idI" customClass="DailyVC" customModule="SHCalendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -435,7 +445,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hg5-Wz-0qK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8jp-AI-Bgt" userLabel="Daily"/>
+                    <tabBarItem key="tabBarItem" title="Daily" id="8jp-AI-Bgt" userLabel="Daily"/>
                     <connections>
                         <outlet property="dailyCalendarView" destination="ykI-Qt-BaL" id="WIv-Xe-SK1"/>
                         <outlet property="dateLabel" destination="C3C-7p-akh" id="A6d-ZG-CFh"/>

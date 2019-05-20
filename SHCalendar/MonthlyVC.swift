@@ -26,9 +26,14 @@ class MonthlyVC: UIViewController {
         super.viewDidLoad()
         
         getThisMonthCal(year: today.year, month: today.month)
+        dates = ScheduleTaskCreator().readSchedule(year: year, month: month)
+        print("dates:\(dates)")
+        calendarView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        dates = ScheduleTaskCreator().readSchedule(year: year, month: month)
+        print("dates:\(dates)")
         calendarView.reloadData()
     }
     
@@ -36,6 +41,9 @@ class MonthlyVC: UIViewController {
         startDay = getMonthInfo(year: year, month: month).startDay
         isYoon = getMonthInfo(year: year, month: month).isYoonYear
         monthYearLabel.text = "\(month+1), \(year)"
+        
+        dates = ScheduleTaskCreator().readSchedule(year: year, month: month)
+        print("dates:\(dates)")
         calendarView.reloadData()
     }
     
@@ -44,6 +52,10 @@ class MonthlyVC: UIViewController {
         else { month -= 1 }
         
         getThisMonthCal(year: year, month: month)
+        
+        dates = ScheduleTaskCreator().readSchedule(year: year, month: month)
+        print("dates:\(dates)")
+        calendarView.reloadData()
     }
     
     @IBAction func nextMonth(_ sender: Any) {
@@ -51,6 +63,10 @@ class MonthlyVC: UIViewController {
         else { month += 1 }
         
         getThisMonthCal(year: year, month: month)
+        
+        dates = ScheduleTaskCreator().readSchedule(year: year, month: month)
+        print("dates:\(dates)")
+        calendarView.reloadData()
     }
 }
 
@@ -70,12 +86,20 @@ extension MonthlyVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MonthlyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MonthlyCollectionViewCell
         cell.backgroundColor = UIColor.clear
+        cell.hasSchedule.backgroundColor = UIColor.clear
         
         if indexPath.item < startDay.rawValue{
             cell.dateLabel.text = ""
         } else {
             let date = indexPath.item - startDay.rawValue + 1
             cell.dateLabel.text = "\(date)"
+            
+            // 일정이 있으면 표시
+            if dates.contains("\(date)") {
+                cell.hasSchedule.backgroundColor = UIColor.red
+            }
+            
+            // 선택된 셀의 배경색 변경
             if year == today.year && month == today.month && date == today.date {
                 selectedCell = cell
                 selectedCell?.backgroundColor = UIColor.yellow

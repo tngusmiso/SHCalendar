@@ -27,7 +27,12 @@ class WeeklyVC: UIViewController {
         
         
         schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
-        print(schedules)
+        weeklyCalendarView.reloadData()
+        setLabels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
         weeklyCalendarView.reloadData()
         setLabels()
     }
@@ -135,8 +140,8 @@ class WeeklyVC: UIViewController {
     
     @IBAction func backWeek(_ sender: Any) {
         weekInfo = WeekInfo(
-            startDate: findWeekBefore(info: weekInfo.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
-            endDate: findWeekBefore(info: weekInfo.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
+            startDate: findWeekBefore(info: weekInfo.startDate),
+            endDate: findWeekBefore(info: weekInfo.endDate))
         setLabels()
         
         schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
@@ -145,14 +150,13 @@ class WeeklyVC: UIViewController {
     
     @IBAction func nextWeek(_ sender: Any) {
         weekInfo = WeekInfo(
-            startDate: findWeekNext(info: weekInfo.startDate ?? DateInfo(year: 0, month: 0, date: 0)),
-            endDate: findWeekNext(info: weekInfo.endDate ?? DateInfo(year: 0, month: 0, date: 0)))
+            startDate: findWeekNext(info: weekInfo.startDate),
+            endDate: findWeekNext(info: weekInfo.endDate))
         setLabels()
         
         schedules = ScheduleTaskCreator().readSchedule(weekData: weekInfo)
         weeklyCalendarView.reloadData()
     }
-    
 }
 
 extension WeeklyVC: UITableViewDelegate, UITableViewDataSource {

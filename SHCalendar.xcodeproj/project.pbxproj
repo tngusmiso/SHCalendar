@@ -10,7 +10,6 @@
 		3AFF929C228BE04700EE0110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929B228BE04700EE0110 /* AppDelegate.swift */; };
 		3AFF929E228BE04700EE0110 /* MonthlyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF929D228BE04700EE0110 /* MonthlyVC.swift */; };
 		3AFF92A1228BE04700EE0110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF929F228BE04700EE0110 /* Main.storyboard */; };
-		3AFF92A3228BE04700EE0110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF92A2228BE04700EE0110 /* Assets.xcassets */; };
 		3AFF92A6228BE04700EE0110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF92A4228BE04700EE0110 /* LaunchScreen.storyboard */; };
 		3AFF933C229057B000EE0110 /* DateStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF933B229057B000EE0110 /* DateStructure.swift */; };
 		3AFF933E22905AEF00EE0110 /* MonthlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF933D22905AEF00EE0110 /* MonthlyCollectionViewCell.swift */; };
@@ -23,6 +22,7 @@
 		3AFF935522923AD000EE0110 /* ScheduleStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935422923AD000EE0110 /* ScheduleStructure.swift */; };
 		3AFF935A22926C2900EE0110 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */; };
 		3AFF935B22926C2900EE0110 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */; };
+		3AFF935D229286A600EE0110 /* Assets 15-54-13-988.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF935C229286A600EE0110 /* Assets 15-54-13-988.xcassets */; };
 		A7D8639742A65D75803F4B82 /* Pods_SHCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C922C7175DE754EE3D85C523 /* Pods_SHCalendar.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		3AFF929B228BE04700EE0110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AFF929D228BE04700EE0110 /* MonthlyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyVC.swift; sourceTree = "<group>"; };
 		3AFF92A0228BE04700EE0110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3AFF92A2228BE04700EE0110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AFF92A5228BE04700EE0110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AFF92A7228BE04700EE0110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AFF933B229057B000EE0110 /* DateStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStructure.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		3AFF935422923AD000EE0110 /* ScheduleStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStructure.swift; sourceTree = "<group>"; };
 		3AFF935822926C2900EE0110 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		3AFF935922926C2900EE0110 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		3AFF935C229286A600EE0110 /* Assets 15-54-13-988.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 15-54-13-988.xcassets"; sourceTree = "<group>"; };
 		C922C7175DE754EE3D85C523 /* Pods_SHCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8302DC85CD91206E669FF2 /* Pods-SHCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCalendar.release.xcconfig"; path = "Target Support Files/Pods-SHCalendar/Pods-SHCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		FEE2B49AB81221C06EB45616 /* Pods-SHCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHCalendar.debug.xcconfig"; path = "Target Support Files/Pods-SHCalendar/Pods-SHCalendar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			children = (
 				3AFF929B228BE04700EE0110 /* AppDelegate.swift */,
 				3AFF929F228BE04700EE0110 /* Main.storyboard */,
-				3AFF92A2228BE04700EE0110 /* Assets.xcassets */,
+				3AFF935C229286A600EE0110 /* Assets 15-54-13-988.xcassets */,
 				3AFF92A4228BE04700EE0110 /* LaunchScreen.storyboard */,
 				3AFF92A7228BE04700EE0110 /* Info.plist */,
 				3AFF934E22917EEE00EE0110 /* Model */,
@@ -214,9 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFF934622914A5300EE0110 /* WeeklyTableViewCell.xib in Resources */,
+				3AFF935D229286A600EE0110 /* Assets 15-54-13-988.xcassets in Resources */,
 				3AFF935B22926C2900EE0110 /* DailyTableViewCell.xib in Resources */,
 				3AFF92A6228BE04700EE0110 /* LaunchScreen.storyboard in Resources */,
-				3AFF92A3228BE04700EE0110 /* Assets.xcassets in Resources */,
 				3AFF92A1228BE04700EE0110 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

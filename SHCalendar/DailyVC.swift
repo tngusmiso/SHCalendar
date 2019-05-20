@@ -29,6 +29,11 @@ class DailyVC: UIViewController {
         dailyCalendarView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        schedules = ScheduleTaskCreator().readSchedule(date: dateInfo)
+        dailyCalendarView.reloadData()
+    }
+    
     func setDateLabel(){
         var yoil:String = ""
         switch dateInfo.day {
@@ -78,6 +83,4 @@ extension DailyVC: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    
 }
