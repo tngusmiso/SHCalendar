@@ -13,6 +13,7 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentLabel.sizeToFit()
         // Initialization code
     }
 

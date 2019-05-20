@@ -13,7 +13,7 @@ class AddSchedulVC: UIViewController {
     var selectedDate: DateInfo = today
     
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +35,15 @@ class AddSchedulVC: UIViewController {
     }
     
     @IBAction func okButton(_ sender: Any) {
-        if textView.text.isEmpty {
+        guard let content = textField.text else {
             let alert: UIAlertController = UIAlertController(title: "일정 등록 실패", message: "내용이 없습니다.", preferredStyle: .alert)
             let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
+            return
         }
         
-        if ScheduleTaskCreator().addSchedule(data: selectedDate, content: textView.text) {
+        if ScheduleTaskCreator().addSchedule(data: selectedDate, content: content) {
             let alert: UIAlertController = UIAlertController(title: "일정 등록 성공", message: "일정을 등록하였습니다.", preferredStyle: .alert)
             let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
                 self.dismiss(animated: true, completion: nil)

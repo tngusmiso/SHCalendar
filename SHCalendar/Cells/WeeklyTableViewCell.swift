@@ -15,6 +15,7 @@ class WeeklyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentLabel.sizeToFit()
         // Initialization code
     }
 

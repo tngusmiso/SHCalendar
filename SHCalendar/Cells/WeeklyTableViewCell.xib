@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYy-9k-aQC">
-                        <rect key="frame" x="78" y="11.5" width="59" height="21"/>
+                        <rect key="frame" x="78" y="11.5" width="59" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,6 +35,8 @@
                 <constraints>
                     <constraint firstItem="sdy-lJ-byj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="16a-gQ-SMK"/>
                     <constraint firstItem="sdy-lJ-byj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BBu-3v-lfv"/>
+                    <constraint firstItem="FYy-9k-aQC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11.5" id="Bdx-lB-wL1"/>
+                    <constraint firstAttribute="bottom" secondItem="FYy-9k-aQC" secondAttribute="bottom" constant="11.5" id="QoF-Fx-lo2"/>
                     <constraint firstItem="FYy-9k-aQC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cGY-RJ-uBu"/>
                     <constraint firstItem="FYy-9k-aQC" firstAttribute="leading" secondItem="sdy-lJ-byj" secondAttribute="trailing" constant="8" id="rRc-BV-PjM"/>
                 </constraints>
